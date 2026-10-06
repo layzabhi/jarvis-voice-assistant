@@ -73,7 +73,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -166,7 +166,7 @@ fun MainScreen(onGetEngine: () -> AssistantEngine) {
     // Update permission status on resume
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
-            if (event == LifecycleEvent.ON_RESUME) {
+            if (event == Lifecycle.Event.ON_RESUME) {
                 permissions = checkAllPermissions(context)
             }
         }

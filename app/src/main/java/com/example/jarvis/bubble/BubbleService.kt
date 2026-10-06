@@ -213,8 +213,8 @@ class BubbleService : Service() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onDestroy() {
-        stopPulseAnimation(bubble ?: return)
         bubble?.let {
+            stopPulseAnimation(it)
             try {
                 wm.removeView(it)
             } catch (_: Exception) {}

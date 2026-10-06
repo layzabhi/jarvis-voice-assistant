@@ -60,10 +60,7 @@ object TimeParser {
     // Handles "5 march", "march 5", "5th march", "5th of march", "march 5th", etc.
     fun monthDay(s: String): Pair<Int, Int>? {
         val cleaned = s.lowercase(Locale.ROOT)
-            .replace("st", "")
-            .replace("nd", "")
-            .replace("rd", "")
-            .replace("th", "")
+            .replace(Regex("(?<=[0-9])(st|nd|rd|th)"), "")
             .replace(" of ", " ")
             .trim()
 

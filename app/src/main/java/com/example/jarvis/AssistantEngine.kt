@@ -30,7 +30,7 @@ class AssistantEngine(
 
     private val stt = SpeechInput(
         ctx,
-        onText = ::onHeard,
+        onText = { text -> onHeard(text) },
         onFail = { say(it) }
     )
 

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Jarvis</string>
+    <string name="bubble_service_name">Jarvis Assistant</string>
+    <string name="bubble_notification_title">Jarvis Assistant Active</string>
+    <string name="bubble_notification_text">Tap the floating bubble to speak</string>
+    <string name="bubble_notification_action_stop">Stop</string>
+</resources>
